@@ -1,0 +1,30 @@
+{{/* ============================================================================
+   Partial — Accordion (Lowdit Brand)
+   ============================================================================
+   Sémantique ACL (TetraLogical Accessible Components Library, licence ISC) :
+   https://tetralogical.com/resources/accessible-components-library/accordion/
+   Implémentation native <details>/<summary> — clavier et lecteurs d'écran
+   fonctionnent sans JavaScript.
+
+   Utilisation (depuis un layout) :
+     {{ partial "components/accordion.html" (dict
+        "heading" "h3"
+        "items" (slice
+          (dict "title" "Question 1" "body" "<p>Réponse…</p>")
+          (dict "title" "Question 2" "body" "<p>Réponse…</p>"))) }}
+
+   Paramètres :
+     "heading"  niveau de titre dans le <summary> (défaut "h3") — hiérarchie
+                de page (règle ACL)
+     "items"    slice de dict : "title" (texte) et "body" (HTML autorisé)
+   CSS : assets/css/components/accordion.css (partial component-styles.html)
+   ============================================================================ */}}
+{{- $heading := .heading | default "h3" -}}
+{{- range .items -}}
+<details class="lowdit-accordion">
+  <summary>
+    <{{ $heading }}>{{ .title }}</{{ $heading }}>
+  </summary>
+  <div>{{ .body | safeHTML }}</div>
+</details>
+{{- end -}}

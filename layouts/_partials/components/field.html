@@ -1,0 +1,44 @@
+{{/* ============================================================================
+   Partial — Champ de formulaire (Lowdit Brand)
+   ACL text-input / textarea (TetraLogical, ISC) — markup natif + label visible.
+
+   {{ partial "components/field.html" (dict
+      "id" "email"
+      "name" "email"
+      "label" "Adresse e-mail"
+      "type" "email"
+      "required" true
+      "hint" "Nous ne partageons pas votre adresse.") }}
+
+   Paramètres :
+     "id" "name" "label" (requis) · "type" (défaut text) · "required" · "hint"
+     · "autocomplete" · "placeholder" · "inputmode" · "rows" (textarea si > 0)
+   ============================================================================ */}}
+{{- $id := .id -}}
+{{- $name := .name | default $id -}}
+{{- $type := .type | default "text" -}}
+{{- $hintID := printf "%s-hint" $id -}}
+{{- $describedBy := .describedBy | default "" -}}
+{{- with .hint -}}{{- $describedBy = printf "%s %s" $describedBy $hintID | strings.TrimSpace -}}{{- end -}}
+<div class="lowdit-field">
+  <label for="{{ $id }}">
+    {{ .label }}{{ if .required }} <span aria-hidden="true">(requis)</span>{{ end }}
+  </label>
+  {{- if .rows -}}
+  <textarea id="{{ $id }}" name="{{ $name }}" rows="{{ .rows }}"
+    {{- if .required }} required{{ end -}}
+    {{- with .placeholder }} placeholder="{{ . }}"{{ end -}}
+    {{- with .autocomplete }} autocomplete="{{ . }}"{{ end -}}
+    {{- with $describedBy }} aria-describedby="{{ . }}"{{ end -}}
+    ></textarea>
+  {{- else -}}
+  <input id="{{ $id }}" name="{{ $name }}" type="{{ $type }}"
+    {{- if .required }} required{{ end -}}
+    {{- with .placeholder }} placeholder="{{ . }}"{{ end -}}
+    {{- with .autocomplete }} autocomplete="{{ . }}"{{ end -}}
+    {{- with .inputmode }} inputmode="{{ . }}"{{ end -}}
+    {{- with $describedBy }} aria-describedby="{{ . }}"{{ end -}}
+    />
+  {{- end -}}
+  {{- with .hint -}}<small id="{{ $hintID }}">{{ . }}</small>{{- end -}}
+</div>

@@ -1,0 +1,26 @@
+{{/* ============================================================================
+   Partial — Résumé d’erreurs en tête de formulaire (pattern GOV.UK / DSFR)
+   https://design-system.service.gov.uk/components/error-summary/
+
+   {{ partial "components/error-summary.html" (dict
+      "title" "Il y a un problème"
+      "errors" (slice
+        (dict "id" "email" "message" "Entrez une adresse e-mail valide")
+        (dict "id" "code" "message" "Ce code n’existe pas dans notre catalogue")) }}
+
+   Paramètres :
+     "title" (défaut « Il y a un problème ») · "errors" slice { "id", "message" }
+     "summaryId" — id du bloc (défaut lowdit-error-summary)
+   Au submit : déplacer le focus sur le résumé (JS produit) ; ne pas compter sur la couleur seule.
+   ============================================================================ */}}
+{{- $sid := .summaryId | default "lowdit-error-summary" -}}
+{{- $title := .title | default "Il y a un problème" -}}
+{{- $titleId := printf "%s-title" $sid -}}
+<div class="lowdit-error-summary" id="{{ $sid }}" role="alert" tabindex="-1" aria-labelledby="{{ $titleId }}">
+  <h2 class="lowdit-error-summary__title" id="{{ $titleId }}">{{ $title }}</h2>
+  <ul class="lowdit-error-summary__list">
+    {{- range .errors -}}
+    <li><a href="#{{ .id }}">{{ .message }}</a></li>
+    {{- end -}}
+  </ul>
+</div>

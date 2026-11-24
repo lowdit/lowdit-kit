@@ -1,0 +1,46 @@
+{{/* ============================================================================
+   Partial — Disclosure (Lowdit Brand)
+   ============================================================================
+   Sémantique ACL (TetraLogical Accessible Components Library, licence ISC) :
+   https://tetralogical.com/resources/accessible-components-library/disclosure/
+   Pattern ARIA : bouton aria-expanded + région contrôlée (aria-controls).
+   Progressive enhancement : sans JS le contenu reste visible dans le flux.
+
+   Utilisation (depuis un layout) :
+     {{ partial "components/disclosure.html" (dict
+        "id" "faq-1"
+        "title" "Voir les détails"
+        "body" "<p>Contenu…</p>") }}
+
+   Paramètres :
+     "id"     identifiant unique du panneau (requis — cible aria-controls)
+     "title"  texte du bouton
+     "body"   HTML du panneau (safeHTML)
+
+   Note : une seule initialisation par page ; l'écoute est déléguée
+   (attribut data-lowdit-disclosure) et le script se protège par un
+   indicateur global, même si le partial est inclus plusieurs fois.
+   CSS : assets/css/components/disclosure.css
+   ============================================================================ */}}
+{{- $id := .id -}}
+<div class="lowdit-disclosure">
+  <button type="button" aria-expanded="false" aria-controls="{{ $id }}"
+          data-lowdit-disclosure>{{ .title }}</button>
+  <div id="{{ $id }}" hidden>{{ .body | safeHTML }}</div>
+</div>
+<script>
+  /* Disclosure Lowdit — bascule aria-expanded + hidden (ACL pattern).
+     Écoute déléguée, initialisée une seule fois par page. */
+  if (!window.__lowditDisclosure) {
+    window.__lowditDisclosure = true;
+    document.addEventListener("click", function (e) {
+      var t = e.target.closest("[data-lowdit-disclosure]");
+      if (!t) return;
+      var panel = document.getElementById(t.getAttribute("aria-controls"));
+      if (!panel) return;
+      var open = t.getAttribute("aria-expanded") === "true";
+      t.setAttribute("aria-expanded", String(!open));
+      panel.hidden = open;
+    });
+  }
+</script>
