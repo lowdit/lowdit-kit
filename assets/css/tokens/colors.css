@@ -188,3 +188,18 @@
     --lowdit-color-border-component: var(--lowdit-role-border-component);
   }
 }
+
+/* Surfaces, bordures et accents de module (anciennement dans lowdit-system.css :
+   ce sont des jetons, ils vivent ici pour tout module qui ne charge que les jetons). */
+:root {
+  --lowdit-surface-page: var(--lowdit-cream);
+  --lowdit-surface-raised: var(--lowdit-white);
+  --lowdit-surface-accent: color-mix(in srgb, var(--lowdit-violet) 6%, var(--lowdit-cream));
+  --lowdit-border-subtle: color-mix(in srgb, var(--lowdit-night) 10%, transparent);
+  --lowdit-border-strong: color-mix(in srgb, var(--lowdit-night) 22%, transparent);
+  --lowdit-accent-sligo: var(--lowdit-violet);
+  --lowdit-accent-repogo: var(--lowdit-repogo);
+  --lowdit-accent-frago: var(--lowdit-coral);
+  --lowdit-accent-marque: var(--lowdit-turquoise);
+  --lowdit-accent-quizago: var(--lowdit-violet);
+}

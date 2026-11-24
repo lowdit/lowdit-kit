@@ -1,20 +1,6 @@
 /* Lowdit design system — fondations (surfaces communes).
-   Les tokens (settings) sont chargés EN AMONT par le partial
-   lowdit/view-tokens.html (couleurs, layout, mouvement, élévation) :
-   pas de ré-import ici (évite le double chargement). */
-:root {
-  --lowdit-surface-page: var(--lowdit-cream);
-  --lowdit-surface-raised: var(--lowdit-white);
-  --lowdit-surface-accent: color-mix(in srgb, var(--lowdit-violet) 6%, var(--lowdit-cream));
-  --lowdit-border-subtle: color-mix(in srgb, var(--lowdit-night) 10%, transparent);
-  --lowdit-border-strong: color-mix(in srgb, var(--lowdit-night) 22%, transparent);
-  --lowdit-accent-sligo: var(--lowdit-violet);
-  --lowdit-accent-repogo: var(--lowdit-repogo);
-  --lowdit-accent-frago: var(--lowdit-coral);
-  --lowdit-accent-marque: var(--lowdit-turquoise);
-  --lowdit-accent-quizago: var(--lowdit-violet);
-}
-
+   Les jetons, y compris surfaces, bordures et accents de module, sont dans
+   tokens/ et chargés en amont par lowdit/view-tokens.html. */
 .lowdit-surface-raised {
   background: var(--lowdit-surface-raised);
   border: 1px solid var(--lowdit-color-border, var(--lowdit-neutral-300));

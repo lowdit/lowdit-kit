@@ -1,0 +1,21 @@
+{{- /*
+  Tête de page du kit : ce dont toute page a besoin, quel que soit le module.
+  Méta (titre, description, canonique), cartes de partage, favicon, puis la
+  cascade de base : polices → jetons → overgo (reset, éléments, prose) →
+  compositions. Le module ajoute ensuite ses composants et ses vues.
+*/ -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if and .Title (not .IsHome) }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+{{- with .Description | default site.Params.description }}
+<meta name="description" content="{{ . }}">
+{{- end }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{ partial "lowdit/social-meta.html" . }}
+{{ partial "lowdit/favicon.html" . }}
+<link rel="stylesheet" href="{{ "assets/css/fonts.css" | relURL }}">
+{{ partial "lowdit/view-tokens.html" . }}
+{{ partial "lowdit/overgo.html" . }}
+{{- with resources.Get "css/compositions.css" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- end }}

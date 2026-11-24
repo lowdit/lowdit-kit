@@ -109,6 +109,7 @@
   background: color-mix(in srgb, var(--lowdit-accent-quizago, var(--lowdit-violet)) 7%, var(--lowdit-white));
 }
 
+.lowdit-quiz-question h2,
 .lowdit-quiz-result h2 {
   margin-top: 0;
   font-size: clamp(1.15rem, 2.5vw, 1.5rem);
