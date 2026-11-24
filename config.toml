@@ -1,0 +1,39 @@
+# lowdit-kit — module Hugo générique : jetons, base, compositions, composants,
+# modèles (vues), coque CSS, polices. Aucune marque client, aucun contenu.
+#
+# Chaque fichier existe une seule fois (assets/) et il est exposé aux chemins
+# que les gabarits consomment :
+#   - assets/css/…          pipeline Hugo (resources.Get)
+#   - static/assets/css/…   liens directs (<link href="assets/css/…">)
+# Les alias ci-dessous remplacent les anciennes copies de sync-brand.sh.
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.128.0"
+
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+
+  # Liens directs vers les mêmes fichiers (repli statique des gabarits)
+  [[module.mounts]]
+    source = "assets/css"
+    target = "static/assets/css"
+
+  # Alias historiques (un seul fichier source, deux noms publiés)
+  [[module.mounts]]
+    source = "assets/css/tokens/colors.css"
+    target = "static/assets/css/lowdit-colors.css"
+  [[module.mounts]]
+    source = "assets/css/lowdit-shell.css"
+    target = "assets/css/minigo.css"
+  [[module.mounts]]
+    source = "assets/css/lowdit-shell.css"
+    target = "static/assets/css/minigo.css"
