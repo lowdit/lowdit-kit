@@ -1,7 +1,7 @@
 /* Boutons — composant `lowdit-btn` (Brand Core v2-04).
    Variantes : --primary, --ghost, --icon-only. États : survol (pointeur fin),
    appui, focus clavier, désactivé. Centrage : min-height + flex, line-height 1.
-   La prose (lowdit-base.css) ne stylise que les liens sans classe : un lien
+   La prose (overgo/prose.css) ne stylise que les liens sans classe : un lien
    bouton n'a besoin d'aucune compensation. */
 
 .lowdit-btn {

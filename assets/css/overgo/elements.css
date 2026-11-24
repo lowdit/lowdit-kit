@@ -1,13 +1,16 @@
+/* Overgo — base de base (héritière de github.com/bertrandkeller/overgo, 2020).
+   Rien ne se perd, tout se compose. */
+
 /* ============================================================================
    TYPOGRAPHIE (couche « elements » ITCSS) — Minigo
    ============================================================================
-   Le reset (`base/reset.css`) neutralise les navigateurs, dont
+   Le reset (`overgo/reset.css`) neutralise les navigateurs, dont
    `h1..h6 { font-size: inherit; font-weight: inherit }` : aucune taille de
    titre n'est alors définie. Cette feuille rétablit une **échelle
    typographique fluide** (clamp) pour les titres et les éléments de base
    (paragraphes, listes, définitions, citations, code…).
 
-   Placée après le reset et AVANT `lowdit-base.css` (elements) : ce dernier
+   Placée après le reset et AVANT `overgo/prose.css` : ce dernier
    affine familles et interlignes, et les contextes de prose
    (`.lowdit-body`, `.lowdit-intro`, `.doc-body`) gardent la
    main sur les titres internes (spécificité supérieure).
@@ -39,7 +42,7 @@ body {
 }
 
 /* --- Titres --------------------------------------------------------------- */
-/* La famille et l'interligne sont affinés par lowdit-base.css ; ici : la TAILLE. */
+/* La famille et l'interligne sont affinés par overgo/prose.css ; ici : la TAILLE. */
 
 h1 { font-size: var(--lowdit-type-3xl); }
 h2 { font-size: var(--lowdit-type-2xl); }

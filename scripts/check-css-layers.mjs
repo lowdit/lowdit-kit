@@ -2,7 +2,7 @@
 /**
  * Contrôle des couches CSS — empêche le retour des bugs de cascade.
  *
- *  1. Base sans composant : les fichiers de base (base/*, lowdit-base.css)
+ *  1. Base sans composant : la couche overgo/ (reset, éléments, prose)
  *     ne nomment aucune classe, hors racines de prose et dette déclarée.
  *  2. Pas de rythme global : aucun sélecteur ne commence par `li + li` (le
  *     rythme des listes appartient à la prose ou au composant).
@@ -44,7 +44,7 @@ function selectorLists(css) {
 }
 
 const failures = [];
-const baseFiles = [...walk(join(kit, "assets/css/base")), join(kit, "assets/css/lowdit-base.css")];
+const baseFiles = walk(join(kit, "assets/css/overgo"));
 const allFiles = walk(join(kit, "assets/css"));
 
 for (const file of allFiles) {

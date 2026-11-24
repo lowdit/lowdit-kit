@@ -21,6 +21,9 @@
   [[module.mounts]]
     source = "data"
     target = "data"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
 
   # Liens directs vers les mêmes fichiers (repli statique des gabarits)
   [[module.mounts]]

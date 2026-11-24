@@ -1,3 +1,6 @@
+/* Overgo — base de base (héritière de github.com/bertrandkeller/overgo, 2020).
+   Rien ne se perd, tout se compose. */
+
 /* Couleurs : chargées par le partial lowdit/view-tokens.html (settings),
    AVANT les elements — pas d'import ici (et chemin fiable quel que soit
    l'empaquetage static/module). */

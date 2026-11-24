@@ -1,0 +1,11 @@
+{{- /*
+  Overgo — couche « base de base » du kit : reset, éléments, prose.
+  Aucune classe : tout site la charge en premier, après les jetons.
+  Héritière du framework Overgo (github.com/bertrandkeller/overgo, 2020).
+  Rien ne se perd, tout se compose.
+*/ -}}
+{{- range slice "reset" "elements" "prose" }}
+  {{- with resources.Get (printf "css/overgo/%s.css" .) }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- end }}
+{{- end }}
