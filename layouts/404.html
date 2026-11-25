@@ -1,0 +1,9 @@
+{{- /* Page introuvable : commune à tout site (kit). Un site la remplace par
+       son propre layouts/404.html. */ -}}
+{{ define "main" }}
+<header class="lowdit-page-header">
+  <h1>{{ i18n "404-title" }}</h1>
+  <p class="lowdit-desc">{{ i18n "404-text" }}</p>
+</header>
+<p><a href="{{ site.Home.RelPermalink }}">{{ i18n "404-home" }}</a></p>
+{{ end }}

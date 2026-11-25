@@ -3,3 +3,6 @@ nav-skiplinks-content: Aller au contenu
 export-print: Version imprimable / PDF
 export-presentation: Présentation
 export-resume: CV (PDF)
+404-title: Page introuvable
+404-text: Cette adresse ne correspond à aucune page du site.
+404-home: Retour à l’accueil

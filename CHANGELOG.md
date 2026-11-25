@@ -13,6 +13,10 @@ reçoivent les sites qui suivent `main`. Politique :
   d'accueil propre au site Brand, il y a été déplacé.
   Où : un site qui appelle `partial "lowdit/render-home.html"`.
   Migrer : copier les deux partials dans le site (`layouts/_partials/lowdit/`).
+- **`lowdit/hub-shell` retiré du kit.** Seul le site Brand l'utilisait (et il
+  appelait `product/breadcrumb`, propre à Brand) : déplacé dans Brand.
+  Où : un site qui appelle `partial "lowdit/hub-shell.html"`.
+  Migrer : copier le partial depuis `lowdit-brand/layouts/_partials/lowdit/`.
 - **Logo et favicons sans valeur par défaut.** Le kit ne suppose plus
   `logos/minigo.png` ni `favicons/minigo`.
   Où : un site qui importe le kit **sans** minigo et sans régler ces clés
@@ -45,6 +49,8 @@ reçoivent les sites qui suivent `main`. Politique :
   `mermaid`, `css-doodle`, venus de minigo : `lowdit/diagrams` et
   `debug/*` les appelaient déjà ; sans minigo, aucun schéma ne se dessinait.
 - Contrat `contract/api.json` et contrôle `scripts/check-public-api.mjs`.
+- **Page introuvable** `404.html` commune (libellés `404-*`) : les modules
+  n'en fournissent plus chacun une.
 
 ### Corrigé
 

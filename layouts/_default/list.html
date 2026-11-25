@@ -1,6 +1,7 @@
 {{- /* Repli du kit : une rubrique simple (titre, introduction, liens), ou la
        galerie de catalogue si la rubrique la demande (`layout: gallery`).
-       Les listes riches (styles, pagination) sont celles de minigo. */ -}}
+       Hugo ne choisit pas `list.gallery.html` pour une rubrique : le choix se
+       fait ici. Les listes riches (styles, pagination) sont celles de minigo. */ -}}
 {{ define "main" }}
 {{- if eq (.Params.layout | default .Layout) "gallery" -}}
   {{ partial "catalog/section-gallery.html" . }}

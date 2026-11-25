@@ -5,7 +5,8 @@
     "_default/single.html",
     "_default/list.html",
     "_default/single.product.html",
-    "section/installation.html"
+    "section/installation.html",
+    "404.html"
   ],
   "blocks": ["title", "head", "main", "footer", "script"],
   "partials": [
@@ -29,7 +30,6 @@
     "lowdit/page-date",
     "lowdit/diagrams",
     "lowdit/design-system",
-    "lowdit/hub-shell",
     "components/accordion",
     "components/button",
     "components/disclosure",
@@ -77,6 +77,7 @@
   ],
   "removed": [
     { "name": "lowdit/render-home", "since": "v0.2.0" },
-    { "name": "lowdit/home-hub-shell", "since": "v0.2.0" }
+    { "name": "lowdit/home-hub-shell", "since": "v0.2.0" },
+    { "name": "lowdit/hub-shell", "since": "v0.2.0" }
   ]
 }

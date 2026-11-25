@@ -3,3 +3,6 @@ nav-skiplinks-content: Skip to content
 export-print: Printable / PDF version
 export-presentation: Presentation
 export-resume: CV (PDF)
+404-title: Page not found
+404-text: This address does not match any page on this site.
+404-home: Back to the home page

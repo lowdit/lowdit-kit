@@ -7,15 +7,7 @@
      {{/* partial "debug/debugprint.html" .GitInfo */}}
      {{/* partial "debug/debugprint.html" .Resources */}}
 -->
-<!-- Associated CSS file:
-     https://github.com/kaushalmodi/hugo-debugprint/blob/master/layouts/partials/debugprint.css
-
-     Inline that CSS file in your site <head> using below (remove /* and */ when using):
-
-     <style>{{/* partial "debugprint.css" | safeCSS */}}</style>
-
-     See https://github.com/kaushalmodi/hugo-debugprint/blob/master/layouts/_default/baseof.html for example.
--->
+<!-- Styles : assets/css/debug.css (kit). -->
 {{- $value                      := . -}}
 {{- $type                       := (printf "%T" $value) -}}
 {{- $typeIsBool                 := (eq "bool" $type) -}}
