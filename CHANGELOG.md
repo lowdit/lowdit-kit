@@ -38,11 +38,24 @@ reçoivent les sites qui suivent `main`. Politique :
 
 ### Déprécié
 
+- **`[params.lowdit] siteProfile` et `view`** → `model`. Ils marchent comme
+  avant (même rendu) ; le warning sera activé quand tous les sites Lowdit
+  auront migré. Correspondance : `hub`/`library` → `hub`, `ds-showroom` →
+  `showroom`, `presentations` → `decks`, `cv`, `publisher`, `inquiry`,
+  `catalog` inchangés. Une combinaison libre (ex. accueil `hub` + feuille
+  `publisher`) se déclare comme un modèle du site :
+  `[params.lowdit.models.<nom>] home = "…" sheet = "…"`.
 - **`[params.lowdit] skin`** → `view`. Warning `lowdit-params-skin` ;
   retrait en v0.4.0.
 
 ### Ajouté
 
+- **Un modèle, un mot : `[params.lowdit] model`.** Le module qui sert un
+  modèle le déclare dans sa config : `[params.lowdit.models.<nom>]` avec
+  `home` (accueil, facultatif) et `sheet` (feuille `css/views/`, facultatif).
+  Hugo fusionne ces tables : plusieurs modules complètent le même modèle.
+  Partial `lowdit/resolve-model` (nom du modèle) ; `lowdit/resolve-view`
+  renvoie la feuille du modèle.
 - **Gabarit de base** `_default/baseof.html` : la coque commune (tête,
   en-tête, navigation, contenu, débogage). Blocs `title`, `head`, `main`,
   `footer`, `script`.

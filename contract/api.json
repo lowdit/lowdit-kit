@@ -26,6 +26,7 @@
     "lowdit/view-body-class",
     "lowdit/body-data-attrs",
     "lowdit/resolve-view",
+    "lowdit/resolve-model",
     "lowdit/display-flags",
     "lowdit/page-date",
     "lowdit/diagrams",
@@ -56,6 +57,8 @@
     "logo",
     "faviconDir",
     "socialImage",
+    "model",
+    "models",
     "view",
     "siteProfile",
     "surface",
@@ -70,7 +73,7 @@
     {
       "id": "params-skin",
       "old": "[params.lowdit] skin",
-      "new": "[params.lowdit] view",
+      "new": "[params.lowdit] model",
       "until": "v0.4.0",
       "file": "layouts/_partials/lowdit/resolve-view.html"
     }

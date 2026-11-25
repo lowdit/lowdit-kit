@@ -1,0 +1,15 @@
+{{- /* Nom du modèle du site : [params.lowdit] model.
+       Un modèle est déclaré par le module qui le sert, dans sa config :
+         [params.lowdit.models.<nom>]
+           home  = "home/<partial>.html"   # accueil (lu par minigo), facultatif
+           sheet = "<feuille>"             # assets/css/views/<feuille>.css, facultatif
+       Hugo fusionne ces tables : plusieurs modules peuvent compléter le même
+       modèle (minigo l'accueil, sligo la feuille).
+       Sans `model` : repli sur l'ancien `siteProfile` (correspondance ci-dessous). */ -}}
+{{- $l := site.Params.lowdit | default dict -}}
+{{- $model := $l.model | default "" -}}
+{{- if not $model -}}
+  {{- $legacy := dict "cv" "cv" "publisher" "publisher" "presentations" "decks" "inquiry" "inquiry" "library" "hub" "hub" "hub" "ds-showroom" "showroom" "catalog" "catalog" -}}
+  {{- $model = index $legacy ($l.siteProfile | default "catalog") | default "catalog" -}}
+{{- end -}}
+{{- return $model -}}
