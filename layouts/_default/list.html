@@ -1,6 +1,10 @@
-{{- /* Repli du kit : une rubrique simple (titre, introduction, liens).
-       Les listes riches (styles, pagination, galerie) sont celles de minigo. */ -}}
+{{- /* Repli du kit : une rubrique simple (titre, introduction, liens), ou la
+       galerie de catalogue si la rubrique la demande (`layout: gallery`).
+       Les listes riches (styles, pagination) sont celles de minigo. */ -}}
 {{ define "main" }}
+{{- if eq (.Params.layout | default .Layout) "gallery" -}}
+  {{ partial "catalog/section-gallery.html" . }}
+{{- else -}}
 <header class="lowdit-page-header">
   <h1>{{ .Title }}</h1>
   {{- with .Description }}
@@ -17,4 +21,5 @@
   {{- end }}
 </ul>
 {{- end }}
+{{- end -}}
 {{ end }}

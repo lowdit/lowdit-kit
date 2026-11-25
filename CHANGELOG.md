@@ -33,17 +33,22 @@ reçoivent les sites qui suivent `main`. Politique :
 - **Points d'accroche** vides `lowdit/hooks/{head,header,body-end}` : un module
   les redéfinit au lieu de réécrire le gabarit.
 - **Replis** `_default/single`, `_default/list`, `_default/single.product`,
-  `section/installation` : un module seul reste navigable.
+  `section/installation` : un module seul reste navigable ; une rubrique
+  `layout: gallery` affiche la galerie de catalogue.
 - `lowdit/main-nav` (venu de minigo) : rubrique courante marquée
   `aria-current` sur ses sous-pages ; `id="main-nav"`.
 - `lowdit/display-flags` : surcharge par page ou rubrique (front matter
   `lowdit:`), contexte page ou dict.
 - `lowdit/deprecated` : annonce d'une dépréciation au build (`warnidf`).
 - `i18n/` : libellés de la coque (lien d'évitement, liens d'export).
+- `assets/js/` (Mermaid, css-doodle, outils de débogage) et shortcodes
+  `mermaid`, `css-doodle`, venus de minigo : `lowdit/diagrams` et
+  `debug/*` les appelaient déjà ; sans minigo, aucun schéma ne se dessinait.
 - Contrat `contract/api.json` et contrôle `scripts/check-public-api.mjs`.
 
 ### Corrigé
 
+- Schémas Mermaid rendus sur un site sans minigo (le script manquait).
 - `<body>` n'affiche plus `ZgotmplZ` quand aucun attribut `data-*` n'est
   réglé (`safeHTMLAttr`).
 
