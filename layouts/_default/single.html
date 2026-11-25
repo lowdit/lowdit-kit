@@ -1,0 +1,15 @@
+{{- /* Repli du kit : une page simple. Un module (minigo, repogo…) le remplace
+       par son propre gabarit ; celui-ci garantit qu'une page s'affiche. */ -}}
+{{ define "main" }}
+<article>
+  <header class="lowdit-page-header">
+    <h1>{{ .Title }}</h1>
+    {{- with .Description }}
+    <p class="lowdit-desc">{{ . }}</p>
+    {{- end }}
+  </header>
+  <div class="lowdit-body">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

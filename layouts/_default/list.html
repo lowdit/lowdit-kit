@@ -1,0 +1,20 @@
+{{- /* Repli du kit : une rubrique simple (titre, introduction, liens).
+       Les listes riches (styles, pagination, galerie) sont celles de minigo. */ -}}
+{{ define "main" }}
+<header class="lowdit-page-header">
+  <h1>{{ .Title }}</h1>
+  {{- with .Description }}
+  <p class="lowdit-desc">{{ . }}</p>
+  {{- end }}
+</header>
+{{- with .Content }}
+<div class="lowdit-intro">{{ . }}</div>
+{{- end }}
+{{- with .Pages }}
+<ul class="stack" data-space="1">
+  {{- range . }}
+  <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+  {{- end }}
+</ul>
+{{- end }}
+{{ end }}

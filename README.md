@@ -27,6 +27,9 @@ service tiers (partage, commentaires, statistiques) → non fourni.
 | `assets/css/lowdit-shell.css`, `zones.css`, `product-doc.css` | coque et zones de page |
 | `static/assets/fonts/` | polices autorisées |
 | `data/lowdit-theme-presets.yaml` | préréglages de surfaces |
+| `layouts/_default/` | **gabarit de base** (`baseof`) et replis `single`, `list`, `single.product` ; `section/installation` |
+| `layouts/_partials/lowdit/hooks/` | points d'accroche vides du gabarit : `head`, `header`, `body-end` (minigo y branche la recherche) |
+| `i18n/` | libellés de la coque (lien d'évitement, liens d'export) |
 | `layouts/_partials/lowdit/` | coque et tête : `overgo` (charge la base), `view-tokens`, `theme-vars`, `logo`, `favicon`, `social-meta`, `hub-shell`… |
 | `layouts/_partials/components/` | composants : `button`, `accordion`, `disclosure`, `error-summary`, `field` |
 | `layouts/_partials/debug/` | outils de test et de débogage (développement) |
@@ -35,9 +38,19 @@ Chaque fichier existe une fois ; `config.toml` l'expose aussi sous
 `static/assets/css/` (liens directs) et sous les alias historiques
 `lowdit-colors.css` et `minigo.css`.
 
+## Étendre sans recopier
+
+Un module hérite du gabarit de base du kit. Il ne le réécrit pas : il redéfinit
+un point d'accroche (`lowdit/hooks/*.html`) ou un bloc (`title`, `head`,
+`main`, `footer`, `script`). Logo et favicons se règlent par la config
+(`[params.lowdit] logo`, `faviconDir`) ; le module peut fournir sa valeur par
+défaut dans sa propre config (c'est ce que fait minigo).
+
 ## Utiliser le kit
 
-Un module l'importe dans sa config :
+Un site le place en dernier dans sa liste de thèmes
+(`theme = ["github.com/lowdit/repogo", "github.com/lowdit/lowdit-kit"]`) ;
+un module chargé par chemin peut aussi l'importer dans sa config :
 
 ```toml
 [[module.imports]]

@@ -1,15 +1,15 @@
-{{/* Favicons du module — ressources dans assets/favicons/<module>/.
-     Renseigner [params.lowdit] faviconDir = "favicons/<module>" dans le site.
-     Distribution depuis lowdit-brand via scripts/sync-brand.sh (lien à la marque). */}}
-{{- $dir := "" -}}
-{{- with site.Params.lowdit }}{{ $dir = .faviconDir }}{{ end -}}
-{{- if not $dir }}{{ $dir = "favicons/minigo" }}{{ end -}}
-{{- with resources.Get (printf "%s/favicon-32x32.png" $dir) -}}
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ .RelPermalink }}">
-{{- end -}}
-{{- with resources.Get (printf "%s/favicon-16x16.png" $dir) -}}
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ .RelPermalink }}">
-{{- end -}}
-{{- with resources.Get (printf "%s/apple-touch-icon.png" $dir) -}}
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ .RelPermalink }}">
+{{/* Favicons : [params.lowdit] faviconDir = "favicons/<nom>" (réglé par le site
+     ou par le module, ex. minigo) ; fichiers issus de lowdit-brand
+     (scripts/sync-brand.sh). Sans réglage : aucun favicon. */}}
+{{- with site.Params.lowdit.faviconDir -}}
+  {{- $dir := . -}}
+  {{- range slice
+        (dict "rel" "icon" "sizes" "32x32" "file" "favicon-32x32.png")
+        (dict "rel" "icon" "sizes" "16x16" "file" "favicon-16x16.png")
+        (dict "rel" "apple-touch-icon" "sizes" "180x180" "file" "apple-touch-icon.png") -}}
+    {{- $rel := .rel }}{{ $sizes := .sizes -}}
+    {{- with resources.Get (printf "%s/%s" $dir .file) -}}
+<link rel="{{ $rel }}"{{ if ne $rel "apple-touch-icon" }} type="image/png"{{ end }} sizes="{{ $sizes }}" href="{{ .RelPermalink }}">
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
