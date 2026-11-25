@@ -1,0 +1,55 @@
+# Changelog — lowdit-kit
+
+Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), versions
+SemVer. Chaque entrée dit **quoi · où · migrer**. « Non publié » = ce que
+reçoivent les sites qui suivent `main`. Politique :
+`lowtech-dev-method/docs/TAGS-MODULES-HUGO.md`.
+
+## Non publié
+
+### Cassé
+
+- **`lowdit/render-home` et `lowdit/home-hub-shell` retirés du kit.** Routeur
+  d'accueil propre au site Brand, il y a été déplacé.
+  Où : un site qui appelle `partial "lowdit/render-home.html"`.
+  Migrer : copier les deux partials dans le site (`layouts/_partials/lowdit/`).
+- **Logo et favicons sans valeur par défaut.** Le kit ne suppose plus
+  `logos/minigo.png` ni `favicons/minigo`.
+  Où : un site qui importe le kit **sans** minigo et sans régler ces clés
+  (avec minigo : aucun changement, minigo fournit ses valeurs par défaut).
+  Migrer : `[params.lowdit] logo = "logos/<nom>.png"` et
+  `faviconDir = "favicons/<nom>"`.
+
+### Déprécié
+
+- **`[params.lowdit] skin`** → `view`. Warning `lowdit-params-skin` ;
+  retrait en v0.4.0.
+
+### Ajouté
+
+- **Gabarit de base** `_default/baseof.html` : la coque commune (tête,
+  en-tête, navigation, contenu, débogage). Blocs `title`, `head`, `main`,
+  `footer`, `script`.
+- **Points d'accroche** vides `lowdit/hooks/{head,header,body-end}` : un module
+  les redéfinit au lieu de réécrire le gabarit.
+- **Replis** `_default/single`, `_default/list`, `_default/single.product`,
+  `section/installation` : un module seul reste navigable.
+- `lowdit/main-nav` (venu de minigo) : rubrique courante marquée
+  `aria-current` sur ses sous-pages ; `id="main-nav"`.
+- `lowdit/display-flags` : surcharge par page ou rubrique (front matter
+  `lowdit:`), contexte page ou dict.
+- `lowdit/deprecated` : annonce d'une dépréciation au build (`warnidf`).
+- `i18n/` : libellés de la coque (lien d'évitement, liens d'export).
+- Contrat `contract/api.json` et contrôle `scripts/check-public-api.mjs`.
+
+### Corrigé
+
+- `<body>` n'affiche plus `ZgotmplZ` quand aucun attribut `data-*` n'est
+  réglé (`safeHTMLAttr`).
+
+## v0.1.0 — 2026-11-25
+
+Première version : jetons, couche Overgo (reset, éléments, prose),
+compositions, composants, vues, coque CSS, polices ; partials de tête, de
+coque, de composants, de catalogue et de débogage. Extrait de `lowdit-brand`
+(`1f11366`) et de `minigo` (`1fcd9ad`).

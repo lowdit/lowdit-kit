@@ -1,0 +1,9 @@
+{{- /*
+  Annonce une dépréciation au build (une seule fois par build).
+  dict "id" "old" "new" "until" :
+    id     identifiant du warning → ignoreLogs = ['lowdit-<id>'] pour le taire
+    old    ce qui est déprécié · new  le remplaçant · until  version de retrait
+  Règle : un warning ne sert qu'à une dépréciation (docs/TAGS-MODULES-HUGO.md).
+  L'entrée correspondante figure au CHANGELOG, rubrique « Déprécié ».
+*/ -}}
+{{- warnidf (printf "lowdit-%s" .id) "Lowdit : %s est déprécié, utiliser %s (retrait en %s) — voir CHANGELOG « Déprécié »." .old .new .until -}}

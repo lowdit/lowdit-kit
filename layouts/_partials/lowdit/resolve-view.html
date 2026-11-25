@@ -2,6 +2,9 @@
   Retourne le nom de vue CSS (sans extension).
   Pedago / books : siteProfile publisher + view publisher ; layouts thème pedago/repogo priment.
 */}}
+{{- with site.Params.lowdit.skin -}}
+  {{- partial "lowdit/deprecated.html" (dict "id" "params-skin" "old" "[params.lowdit] skin" "new" "[params.lowdit] view" "until" "lowdit-kit v0.4.0") -}}
+{{- end -}}
 {{- $explicit := site.Params.lowdit.view | default site.Params.lowdit.skin | default "" -}}
 {{- if eq $explicit "none" -}}
   {{- "" -}}

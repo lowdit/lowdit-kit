@@ -1,0 +1,82 @@
+{
+  "$comment": "API publique de lowdit-kit. Ce qui est listé ici ne disparaît pas sans passer par « Déprécié » puis « Cassé » au CHANGELOG. Contrôle : node scripts/check-public-api.mjs. Politique : lowtech-dev-method/docs/TAGS-MODULES-HUGO.md",
+  "layouts": [
+    "_default/baseof.html",
+    "_default/single.html",
+    "_default/list.html",
+    "_default/single.product.html",
+    "section/installation.html"
+  ],
+  "blocks": ["title", "head", "main", "footer", "script"],
+  "partials": [
+    "lowdit/head",
+    "lowdit/hooks/head",
+    "lowdit/hooks/header",
+    "lowdit/hooks/body-end",
+    "lowdit/deprecated",
+    "lowdit/main-nav",
+    "lowdit/logo",
+    "lowdit/favicon",
+    "lowdit/social-meta",
+    "lowdit/overgo",
+    "lowdit/view-tokens",
+    "lowdit/theme-vars",
+    "lowdit/view-styles",
+    "lowdit/view-body-class",
+    "lowdit/body-data-attrs",
+    "lowdit/resolve-view",
+    "lowdit/display-flags",
+    "lowdit/page-date",
+    "lowdit/diagrams",
+    "lowdit/design-system",
+    "lowdit/hub-shell",
+    "components/accordion",
+    "components/button",
+    "components/disclosure",
+    "components/error-summary",
+    "components/field",
+    "catalog/card",
+    "catalog/card-visual",
+    "catalog/section-gallery",
+    "catalog/styles",
+    "catalog/visual-art",
+    "exports/links",
+    "home/catalog-grid",
+    "product/layout",
+    "debug/debug",
+    "debug/test-assist"
+  ],
+  "internal": [
+    "debug/debuglist",
+    "debug/debuglist-element",
+    "debug/debugprint",
+    "debug/test-plan"
+  ],
+  "params": [
+    "logo",
+    "faviconDir",
+    "socialImage",
+    "view",
+    "siteProfile",
+    "surface",
+    "theme",
+    "homeLayout",
+    "showDate",
+    "showSummary",
+    "showPrintLink",
+    "showPresentationLink"
+  ],
+  "deprecated": [
+    {
+      "id": "params-skin",
+      "old": "[params.lowdit] skin",
+      "new": "[params.lowdit] view",
+      "until": "v0.4.0",
+      "file": "layouts/_partials/lowdit/resolve-view.html"
+    }
+  ],
+  "removed": [
+    { "name": "lowdit/render-home", "since": "v0.2.0" },
+    { "name": "lowdit/home-hub-shell", "since": "v0.2.0" }
+  ]
+}

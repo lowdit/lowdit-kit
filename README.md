@@ -69,7 +69,16 @@ node scripts/check-css-layers.mjs        # base sans composant, pas de li + li g
 node scripts/check-component-contract.mjs
 node scripts/check-fluid-scale.mjs
 node scripts/check-layout-templates.mjs
+node scripts/check-public-api.mjs        # contrat (contract/api.json) ↔ CHANGELOG
 ```
+
+## Versions et ruptures
+
+Le kit promet la compatibilité : ce que liste `contract/api.json` ne disparaît
+pas sans passer par « Déprécié » (warning `lowdit-<id>` au build, partial
+`lowdit/deprecated`) puis « Cassé » au [CHANGELOG](CHANGELOG.md). Nos sites
+suivent `main` ; un site qui veut figer sa version le fait par son `go.mod`.
+Politique : `lowtech-dev-method/docs/TAGS-MODULES-HUGO.md`. Version : `bin/release`.
 
 ## Lignée
 
