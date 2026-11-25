@@ -1,11 +1,20 @@
-{{/* Options d'affichage des listes et fiches.
-   Défaut documenté : tout activé (cf. minigo/README.md).
-   Un booléen ne peut pas passer par `default` : Hugo considère `false` comme
-   une valeur vide. On teste donc la présence réelle avec `isset`. */}}
+{{/* Options d'affichage des listes et fiches (showDate, showSummary).
+   Défaut : tout activé ; le site règle `params.lowdit`, une page ou une
+   rubrique peut surcharger dans son front matter (`lowdit:`).
+   Contexte : une page, ou un dict qui porte la page sous la clé `page`.
+   Un booléen ne passe pas par `default` (false est « vide ») : on teste `isset`. */}}
 {{- $showDate := true -}}
 {{- $showSummary := true -}}
 {{- with site.Params.lowdit -}}
   {{- if isset . "showDate" -}}{{- $showDate = .showDate -}}{{- end -}}
   {{- if isset . "showSummary" -}}{{- $showSummary = .showSummary -}}{{- end -}}
+{{- end -}}
+{{- $page := . -}}
+{{- if reflect.IsMap . -}}{{- $page = index . "page" -}}{{- end -}}
+{{- with $page -}}
+  {{- with .Params.lowdit -}}
+    {{- if isset . "showDate" -}}{{- $showDate = .showDate -}}{{- end -}}
+    {{- if isset . "showSummary" -}}{{- $showSummary = .showSummary -}}{{- end -}}
+  {{- end -}}
 {{- end -}}
 {{- return (dict "showDate" $showDate "showSummary" $showSummary) -}}
