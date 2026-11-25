@@ -9,6 +9,18 @@ reçoivent les sites qui suivent `main`. Politique :
 
 ### Cassé
 
+- **Les feuilles de vue quittent le kit** et rejoignent le module qui sert le
+  modèle, au même chemin (`assets/css/views/<nom>.css`) : `publisher` →
+  repogo, `cv-vitrine` → resugo, `deck-studio` → sligo, `drill` → quizago,
+  `inquiry` → fromago, `thinktank` et `catalog` → minigo, `lowdit-home` →
+  Brand. Leurs règles de `charte-premium.css` et `components/forms.css` les
+  ont suivies. Rien à faire pour un site qui importe le module du modèle.
+  Où : un site qui règle `view` (ou `siteProfile`) sur un modèle **sans**
+  importer son module : la feuille n'est plus liée (plus de repli sur
+  `catalog`, plus de lien cassé).
+  Migrer : importer le module (ex. repogo pour `publisher`) ou `view = "none"`.
+  Effet de bord : un site ne publie plus les neuf feuilles de vue, seulement
+  celle de son modèle.
 - **`lowdit/render-home` et `lowdit/home-hub-shell` retirés du kit.** Routeur
   d'accueil propre au site Brand, il y a été déplacé.
   Où : un site qui appelle `partial "lowdit/render-home.html"`.

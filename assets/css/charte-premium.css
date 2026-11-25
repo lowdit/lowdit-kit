@@ -31,12 +31,6 @@
   }
 }
 
-.lowdit--view-publisher .lowdit-header {
-  position: relative;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
 /* ——— Logo module (planche PNG) ——— */
 .lowdit-logo__mark {
   width: 2.75rem;
@@ -49,12 +43,6 @@
     0 0 0 1px color-mix(in srgb, var(--lowdit-white) 80%, transparent),
     0 0.35rem 1rem color-mix(in srgb, var(--lowdit-charte-accent) 18%, transparent);
   object-fit: contain;
-}
-
-.lowdit--view-publisher .lowdit-logo__mark {
-  background: color-mix(in srgb, var(--lowdit-white) 12%, transparent);
-  border-color: color-mix(in srgb, var(--lowdit-cream) 35%, transparent);
-  box-shadow: none;
 }
 
 .lowdit-logo__name {
@@ -99,58 +87,6 @@
   font-size: var(--lowdit-font-size-hero, clamp(1.75rem, 4vw, 2.75rem));
   letter-spacing: var(--lowdit-tracking-display, -0.015em);
   max-width: 22ch;
-}
-
-/* Vues qui gardent un hero « ouvert » */
-.lowdit--view-deck-studio .lowdit-hero,
-.lowdit--view-cv-vitrine .lowdit-hero {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.lowdit--view-deck-studio .lowdit-hero::before,
-.lowdit--view-cv-vitrine .lowdit-hero::before {
-  display: none;
-}
-
-.lowdit-home__hero.lowdit-hero h1 {
-  font-size: var(--lowdit-font-size-display, clamp(2rem, 4.5vw, 3.25rem));
-  max-width: 18ch;
-}
-
-/* Accents par vue */
-.lowdit--view-publisher {
-  --lowdit-charte-accent: var(--lowdit-repogo, #2f6bff);
-  --lowdit-charte-gradient: linear-gradient(
-    165deg,
-    var(--lowdit-repogo) 0%,
-    var(--lowdit-night) 100%
-  );
-}
-
-.lowdit--view-deck-studio,
-.lowdit--view-deck-studio .lowdit-hero--slides {
-  --lowdit-charte-accent: var(--lowdit-violet, #5b3df5);
-}
-
-.lowdit--view-cv-vitrine {
-  --lowdit-charte-accent: var(--lowdit-violet, #5b3df5);
-}
-
-.lowdit--view-inquiry {
-  --lowdit-charte-accent: var(--lowdit-turquoise, #14c6b1);
-  --lowdit-charte-gradient: linear-gradient(
-    165deg,
-    var(--lowdit-turquoise) 0%,
-    var(--lowdit-night) 100%
-  );
-}
-
-.lowdit--view-thinktank {
-  --lowdit-charte-accent: var(--lowdit-night, #0b2545);
 }
 
 /* Cartes coque : pas de filet accent en tête (uniformisation brand). */

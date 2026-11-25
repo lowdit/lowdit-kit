@@ -214,10 +214,7 @@
 .lowdit-form input:focus-visible,
 .lowdit-form textarea:focus-visible,
 .lowdit-form select:focus-visible,
-.lowdit-search input:focus-visible,
-.lowdit--view-inquiry input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):focus-visible,
-.lowdit--view-inquiry textarea:focus-visible,
-.lowdit--view-inquiry select:focus-visible {
+.lowdit-search input:focus-visible {
   border-color: var(--lowdit-color-focus);
   outline: 2px solid var(--lowdit-color-focus);
   outline-offset: 2px;
