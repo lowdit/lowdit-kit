@@ -47,8 +47,8 @@
   flex-direction: column;
   gap: var(--lowdit-space-3);
   padding: var(--lowdit-space-5);
-  background: var(--lowdit-color-surface, var(--lowdit-white));
-  border: 1px solid var(--lowdit-color-border, var(--lowdit-neutral-300));
+  background: var(--lowdit-color-surface);
+  border: 1px solid var(--lowdit-color-border);
   border-radius: var(--lowdit-radius-lg, 14px);
   box-shadow: var(--lowdit-shadow-card);
   transition:
@@ -106,28 +106,28 @@
 
 .lowdit-card--ref,
 .lowdit-card[data-spotlight] {
-  border-color: var(--lowdit-turquoise);
+  border-color: var(--lowdit-color-highlight);
   box-shadow:
-    0 0 0 2px color-mix(in srgb, var(--lowdit-turquoise) 35%, transparent),
+    0 0 0 2px color-mix(in srgb, var(--lowdit-color-highlight) 35%, transparent),
     var(--lowdit-shadow-card);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .lowdit-card:has(h3 a):hover {
-    border-color: color-mix(in srgb, var(--lowdit-turquoise) 45%, var(--lowdit-neutral-300));
+    border-color: color-mix(in srgb, var(--lowdit-color-highlight) 45%, var(--lowdit-color-line));
     box-shadow: var(--lowdit-shadow-md);
     transform: translateY(-1px);
   }
 
   .lowdit-card__title a:hover,
   .lowdit-card h3 a:hover {
-    color: var(--lowdit-role-accent-repogo-text, var(--lowdit-repogo-700));
+    color: var(--lowdit-role-accent-repogo-text);
   }
 }
 
 .lowdit-card:focus-within:has(:focus-visible) {
-  border-color: var(--lowdit-turquoise);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--lowdit-turquoise) 28%, transparent);
+  border-color: var(--lowdit-color-highlight);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--lowdit-color-highlight) 28%, transparent);
 }
 
 .lowdit-card h3 a:focus-visible {

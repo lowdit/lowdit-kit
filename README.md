@@ -46,6 +46,37 @@ un point d'accroche (`lowdit/hooks/*.html`) ou un bloc (`title`, `head`,
 (`[params.lowdit] logo`, `faviconDir`) ; le module peut fournir sa valeur par
 défaut dans sa propre config (c'est ce que fait minigo).
 
+## Décliner une marque
+
+Le kit porte **une marque par défaut, Lowdit** (`assets/css/tokens/`). Les
+feuilles du kit et des modules lisent des **rôles**, jamais la palette. Une
+autre marque redéfinit ces rôles dans **un seul fichier** du site,
+`assets/css/marque.css`, chargé juste après les jetons :
+
+```css
+:root {
+  --lowdit-color-text: #1f2d1a;          /* texte, encre */
+  --lowdit-color-text-muted: #4a5a44;    /* texte secondaire */
+  --lowdit-color-text-subtle: #5d6b55;   /* dates, légendes */
+  --lowdit-color-background: #f4f1e6;    /* fond de page */
+  --lowdit-color-surface: #fffdf6;       /* cartes, blocs */
+  --lowdit-color-accent: #3a7d44;        /* accent principal */
+  --lowdit-color-highlight: #c07a00;     /* second accent, survol */
+  --lowdit-color-brand: #3a7d44;         /* filets de marque */
+  --lowdit-color-action: #2f6b39;        /* boutons (contraste ≥ 4.5:1 avec action-foreground) */
+  --lowdit-color-line: #ddd6c4;          /* traits */
+  --lowdit-font-reading: "Literata", Georgia, serif;
+  --lowdit-font-display: "Literata", Georgia, serif;
+}
+```
+
+- Le **rythme** (échelle, espacements, rayons) se redéfinit de la même façon
+  (`--lowdit-type-*`, `--lowdit-space-*`, `--lowdit-radius-*`).
+- Pour tout remplacer, un site fournit le même chemin qu'un fichier de jetons
+  (`assets/css/tokens/colors.css`…).
+- Mode sombre : redéfinir les rôles sous `:root[data-theme="dark"]`.
+- Ce qui manque de vocabulaire va en CSS « candidat » (règles de l'univers).
+
 ## Utiliser le kit
 
 Un site le place en dernier dans sa liste de thèmes

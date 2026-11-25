@@ -20,7 +20,7 @@
   {{ partial "lowdit/diagrams.html" . }}
   {{ partial "lowdit/hooks/head.html" . }}
   {{ partial "lowdit/view-styles.html" . }}
-  {{- range slice "lowdit-shell" "components/forms" "components/buttons" "components/navigation" "components/card" "components/accordion" "components/disclosure" "components/quiz-drill" "charte-premium" "utils" "product-doc" "zones" "site-overrides" }}
+  {{- range slice "lowdit-shell" "components/forms" "components/buttons" "components/navigation" "components/card" "components/accordion" "components/disclosure" "charte-premium" "utils" "product-doc" "zones" "site-overrides" }}
     {{- with resources.Get (printf "css/%s.css" .) }}
   <link rel="stylesheet" href="{{ .RelPermalink }}">
     {{- end }}

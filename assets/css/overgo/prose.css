@@ -4,21 +4,12 @@
 /* Couleurs : chargées par le partial lowdit/view-tokens.html (settings),
    AVANT les elements — pas d'import ici (et chemin fiable quel que soit
    l'empaquetage static/module). */
-:root {
-  /* Politique Premium : Atkinson pour lecture, interface et titrage ; Optician
-     Sans uniquement pour les wordmarks courts ; Subjectivity uniquement pour
-     Sligo ; --lowdit-font-premium permet une extension locale contrôlée. */
-  --lowdit-font-logo: "Optician Sans", ui-sans-serif, system-ui, sans-serif;
-  --lowdit-font-display: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
-  --lowdit-font-premium: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
-  --lowdit-font-expressive: var(--lowdit-font-premium);
-  --lowdit-font-reading: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
-  --lowdit-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-}
+/* Familles de polices : rôles --lowdit-font-* définis dans tokens/typography.css
+   (marque : un site les redéfinit dans assets/css/marque.css). */
 
 html {
-  color: var(--lowdit-color-text, var(--lowdit-night));
-  background: var(--lowdit-color-background, var(--lowdit-cream));
+  color: var(--lowdit-color-text);
+  background: var(--lowdit-color-background);
 }
 
 body {
@@ -33,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: var(--lowdit-color-link, var(--lowdit-night));
+  color: var(--lowdit-color-link);
 }
 
 /* ============================================================================
@@ -51,7 +42,7 @@ a {
 .pub-workspace__note {
   font-family: var(--lowdit-font-reading);
   line-height: 1.62;
-  color: var(--lowdit-color-text, var(--lowdit-night));
+  color: var(--lowdit-color-text);
 }
 
 :is(.lowdit-body, .lowdit-intro, .doc-body) > :first-child {
@@ -62,7 +53,7 @@ a {
 :is(.lowdit-body, .lowdit-intro, .doc-body) :where(h2, h3, h4, h5):where(:not([class])) {
   font-family: var(--lowdit-font-display);
   line-height: 1.18;
-  color: var(--lowdit-color-text, var(--lowdit-night));
+  color: var(--lowdit-color-text);
 }
 
 :is(.lowdit-body, .lowdit-intro, .doc-body) :where(h2:not([class])) {
@@ -115,7 +106,7 @@ a {
 
 @media (hover: hover) and (pointer: fine) {
   :is(.lowdit-body, .lowdit-intro, .doc-body) a:not([class]):hover {
-    color: var(--lowdit-role-accent-repogo-text, var(--lowdit-repogo-700));
+    color: var(--lowdit-role-accent-repogo-text);
     text-decoration-thickness: 0.12em;
     text-underline-offset: 0.23em;
   }
@@ -137,8 +128,8 @@ a {
 :is(.lowdit-body, .lowdit-intro, .doc-body) blockquote:where(:not([class])) {
   margin: 1.4rem 0;
   padding: 0.3rem 0 0.3rem 1.1rem;
-  border-left: 3px solid var(--lowdit-violet);
-  color: var(--lowdit-color-text-muted, var(--lowdit-muted));
+  border-left: 3px solid var(--lowdit-color-accent);
+  color: var(--lowdit-color-text-muted);
   max-width: 66ch;
 }
 
@@ -171,7 +162,7 @@ a {
 }
 
 :is(.lowdit-body, .lowdit-intro, .doc-body) table:where(:not([class])) thead th {
-  background: color-mix(in srgb, var(--lowdit-color-text, var(--lowdit-night)) 5%, transparent);
+  background: color-mix(in srgb, var(--lowdit-color-text) 5%, transparent);
   font-weight: 700;
 }
 
@@ -181,7 +172,7 @@ a {
   text-align: left;
   font-weight: 700;
   padding-block-end: var(--lowdit-space-2);
-  color: var(--lowdit-color-text, var(--lowdit-night));
+  color: var(--lowdit-color-text);
 }
 
 /* Cellule d'en-tête de ligne : même poids que l'en-tête de colonne. */
@@ -195,7 +186,7 @@ a {
 :is(.lowdit-body, .lowdit-intro, .doc-body) :not(pre) > code:where(:not([class])) {
   font-family: var(--lowdit-font-mono);
   font-size: 0.9em;
-  background: color-mix(in srgb, var(--lowdit-color-text, var(--lowdit-night)) 8%, transparent);
+  background: color-mix(in srgb, var(--lowdit-color-text) 8%, transparent);
   padding: 0.12em 0.4em;
   border-radius: 0.3rem;
 }
@@ -211,7 +202,7 @@ a {
   overflow-x: auto;
   border: 1px solid var(--lowdit-border-subtle, var(--lowdit-color-border, #d8d4ca));
   border-radius: var(--lowdit-radius-md, 0.5rem);
-  background: color-mix(in srgb, var(--lowdit-color-text, var(--lowdit-night)) 5%, transparent);
+  background: color-mix(in srgb, var(--lowdit-color-text) 5%, transparent);
 }
 
 :is(.lowdit-body, .lowdit-intro, .doc-body) .highlight {

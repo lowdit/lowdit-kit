@@ -3,7 +3,7 @@
    tokens/ et chargés en amont par lowdit/view-tokens.html. */
 .lowdit-surface-raised {
   background: var(--lowdit-surface-raised);
-  border: 1px solid var(--lowdit-color-border, var(--lowdit-neutral-300));
+  border: 1px solid var(--lowdit-color-border);
   border-radius: var(--lowdit-radius-lg, 14px);
   box-shadow: var(--lowdit-shadow-card);
 }
@@ -19,7 +19,7 @@
 .lowdit-lead {
   font-size: var(--lowdit-font-size-lead);
   line-height: var(--lowdit-line-body);
-  color: var(--lowdit-muted);
+  color: var(--lowdit-color-text-subtle);
   max-width: 38em;
   margin: 0 0 var(--lowdit-space-4);
 }
@@ -52,7 +52,7 @@
   height: min(40vw, 20rem);
   top: -6%;
   right: 0;
-  background: color-mix(in srgb, var(--lowdit-violet) 35%, transparent);
+  background: color-mix(in srgb, var(--lowdit-color-accent) 35%, transparent);
 }
 
 .lowdit-page-bg::after {
@@ -60,5 +60,5 @@
   height: min(35vw, 16rem);
   bottom: 8%;
   left: -4%;
-  background: color-mix(in srgb, var(--lowdit-turquoise) 30%, transparent);
+  background: color-mix(in srgb, var(--lowdit-color-highlight) 30%, transparent);
 }

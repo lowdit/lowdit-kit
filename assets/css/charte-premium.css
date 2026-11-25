@@ -2,26 +2,15 @@
    Couche components+ : après minigo.css. Les vues peuvent réinitialiser
    (deck-studio, cv-vitrine) via leurs feuilles views/*.css. */
 
-:root {
-  --lowdit-charte-gradient: linear-gradient(
-    165deg,
-    var(--lowdit-turquoise, #14c6b1) 0%,
-    var(--lowdit-violet, #5b3df5) 55%,
-    var(--lowdit-night, #0b2545) 100%
-  );
-  --lowdit-charte-accent: var(--lowdit-violet, #5b3df5);
-  --lowdit-charte-surface: var(--lowdit-color-surface, var(--lowdit-white));
-  --lowdit-charte-shadow: 0 1.25rem 3rem color-mix(in srgb, var(--lowdit-night, #0b2545) 8%, transparent);
-}
 
 /* ——— En-tête (coque claire ; publisher garde son header nuit) ——— */
 .lowdit-header {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: color-mix(in srgb, var(--lowdit-cream, #f7f6f2) 88%, var(--lowdit-white));
-  border-bottom-color: color-mix(in srgb, var(--lowdit-night) 8%, transparent);
-  box-shadow: 0 1px 0 color-mix(in srgb, var(--lowdit-white) 60%, transparent);
+  background: color-mix(in srgb, var(--lowdit-color-background) 88%, var(--lowdit-color-surface));
+  border-bottom-color: color-mix(in srgb, var(--lowdit-color-text) 8%, transparent);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--lowdit-color-surface) 60%, transparent);
 }
 
 @supports ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px))) {
@@ -37,10 +26,10 @@
   height: 2.75rem;
   padding: 0.35rem;
   border-radius: var(--lowdit-radius-md, 8px);
-  background: var(--lowdit-white);
-  border: 1px solid color-mix(in srgb, var(--lowdit-night) 12%, transparent);
+  background: var(--lowdit-color-surface);
+  border: 1px solid color-mix(in srgb, var(--lowdit-color-text) 12%, transparent);
   box-shadow:
-    0 0 0 1px color-mix(in srgb, var(--lowdit-white) 80%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--lowdit-color-surface) 80%, transparent),
     0 0.35rem 1rem color-mix(in srgb, var(--lowdit-charte-accent) 18%, transparent);
   object-fit: contain;
 }
@@ -58,7 +47,7 @@
   margin-bottom: var(--lowdit-space-6, 2rem);
   padding: var(--lowdit-space-6, 2rem) var(--lowdit-space-5, 1.5rem);
   background: var(--lowdit-charte-surface);
-  border: 1px solid var(--lowdit-border-subtle, color-mix(in srgb, var(--lowdit-night) 10%, transparent));
+  border: 1px solid var(--lowdit-border-subtle);
   border-radius: var(--lowdit-radius-lg, 14px);
   box-shadow: var(--lowdit-charte-shadow);
   overflow: hidden;
@@ -79,7 +68,7 @@
 .lowdit-hero--signature .lowdit-hero__eyebrow,
 .lowdit-hero:not(.lowdit-hero--bare) .lowdit-hero__eyebrow {
   letter-spacing: var(--lowdit-tracking-eyebrow, 0.06em);
-  color: var(--lowdit-charte-accent, var(--lowdit-violet));
+  color: var(--lowdit-charte-accent);
 }
 
 .lowdit-hero--signature h1,

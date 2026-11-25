@@ -26,7 +26,7 @@
   cursor: pointer;
   border: 1px solid var(--lowdit-color-border-component);
   border-radius: var(--lowdit-radius-md, 6px);
-  background: var(--lowdit-color-surface, var(--lowdit-cream, #f7f6f2));
+  background: var(--lowdit-color-surface);
   transition: var(
     --lowdit-transition-control,
     border-color 150ms ease,
@@ -47,7 +47,7 @@
 .lowdit-disclosure > button::before {
   content: "\25b8";
   margin-top: 0.12em;
-  color: var(--lowdit-color-link, var(--lowdit-violet, #5b3df5));
+  color: var(--lowdit-color-link);
   transition: var(--lowdit-transition-disclosure-icon, transform 150ms ease);
   flex-shrink: 0;
 }
@@ -62,7 +62,7 @@
   border: 1px solid var(--lowdit-color-border-component);
   border-top: 0;
   border-radius: 0 0 var(--lowdit-radius-md, 6px) var(--lowdit-radius-md, 6px);
-  background: var(--lowdit-color-surface, var(--lowdit-cream, #f7f6f2));
+  background: var(--lowdit-color-surface);
 }
 
 .lowdit-disclosure > button[aria-expanded="true"] {

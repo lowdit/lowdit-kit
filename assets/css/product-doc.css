@@ -4,15 +4,15 @@
 .content-hero--bare {
   margin: 0 0 2.5rem;
   padding: 2rem 0 1.5rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--lowdit-night) 10%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--lowdit-color-text) 10%, transparent);
 }
 
 .lowdit-product {
   box-sizing: border-box;
   width: 100%;
   padding: var(--lowdit-space-6) var(--lowdit-space-5);
-  background: var(--lowdit-color-surface, var(--lowdit-white));
-  border: 1px solid var(--lowdit-color-border, var(--lowdit-neutral-300));
+  background: var(--lowdit-color-surface);
+  border: 1px solid var(--lowdit-color-border);
   border-radius: var(--lowdit-radius-lg, 14px);
   box-shadow: var(--lowdit-shadow-card);
 }
@@ -79,7 +79,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  border-left: 2px solid var(--lowdit-border-subtle, color-mix(in srgb, var(--lowdit-night) 10%, transparent));
+  border-left: 2px solid var(--lowdit-border-subtle);
 }
 
 .doc-nav li {
@@ -91,7 +91,7 @@
   padding: 0.45rem 0 0.45rem 1rem;
   margin-left: -2px;
   border-left: 2px solid transparent;
-  color: var(--lowdit-night);
+  color: var(--lowdit-color-text);
   text-decoration: none;
   font-weight: 500;
   line-height: 1.45;
@@ -99,8 +99,8 @@
 
 .doc-nav a:hover,
 .doc-nav a[aria-current="page"] {
-  border-left-color: var(--lowdit-turquoise);
-  color: var(--lowdit-role-accent-repogo-text, var(--lowdit-repogo-700));
+  border-left-color: var(--lowdit-color-highlight);
+  color: var(--lowdit-role-accent-repogo-text);
 }
 
 .doc-nav ul ul {
@@ -117,7 +117,7 @@
 .lowdit-product .content-hero {
   margin-block-end: 0;
   padding-bottom: var(--lowdit-space-5);
-  border-bottom: 1px solid var(--lowdit-color-border, var(--lowdit-neutral-300));
+  border-bottom: 1px solid var(--lowdit-color-border);
 }
 
 .lowdit-product .lowdit-cards {
@@ -134,8 +134,8 @@
   gap: var(--lowdit-space-6, 2rem);
   align-items: start;
   padding: var(--lowdit-space-6) var(--lowdit-space-5);
-  background: var(--lowdit-color-surface, var(--lowdit-white));
-  border: 1px solid var(--lowdit-color-border, var(--lowdit-neutral-300));
+  background: var(--lowdit-color-surface);
+  border: 1px solid var(--lowdit-color-border);
   border-radius: var(--lowdit-radius-lg, 14px);
   box-shadow: var(--lowdit-shadow-card);
 }
@@ -182,7 +182,7 @@
   gap: 0.25rem;
   margin: 0;
   padding: 0 0 0.35rem;
-  border-block-end: 1px solid color-mix(in srgb, var(--lowdit-night) 10%, transparent);
+  border-block-end: 1px solid color-mix(in srgb, var(--lowdit-color-text) 10%, transparent);
   list-style: none;
 }
 
@@ -204,13 +204,13 @@
 
 .family-menu__list a:hover,
 .family-menu__list a:focus-visible {
-  border-block-end-color: var(--lowdit-sage, var(--lowdit-turquoise));
+  border-block-end-color: var(--lowdit-color-brand);
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
 
 .family-menu__list a[aria-current="true"] {
-  border-block-end-color: var(--lowdit-sage, var(--lowdit-turquoise));
+  border-block-end-color: var(--lowdit-color-brand);
 }
 
 .family-menu__list .family-menu__home {
@@ -260,7 +260,7 @@
   .doc-nav > ul > li > a:hover,
   .doc-nav > ul > li > a[aria-current="page"] {
     border-left-color: transparent;
-    border-bottom-color: var(--lowdit-turquoise);
+    border-bottom-color: var(--lowdit-color-highlight);
   }
 
   .doc-nav ul ul {

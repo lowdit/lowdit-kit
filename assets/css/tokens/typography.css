@@ -15,3 +15,17 @@
 
   --lowdit-measure: clamp(34ch, 32ch + 2vw, 68ch);
 }
+
+/* Familles de polices (identité Lowdit). Venues d'overgo/prose.css pour
+   qu'une marque puisse les redéfinir (marque.css se charge après les jetons). */
+:root {
+  /* Politique Premium : Atkinson pour lecture, interface et titrage ; Optician
+     Sans uniquement pour les wordmarks courts ; Subjectivity uniquement pour
+     Sligo ; --lowdit-font-premium permet une extension locale contrôlée. */
+  --lowdit-font-logo: "Optician Sans", ui-sans-serif, system-ui, sans-serif;
+  --lowdit-font-display: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
+  --lowdit-font-premium: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
+  --lowdit-font-expressive: var(--lowdit-font-premium);
+  --lowdit-font-reading: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
+  --lowdit-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}

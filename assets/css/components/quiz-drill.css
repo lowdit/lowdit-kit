@@ -18,13 +18,13 @@
   font-weight: 700;
   letter-spacing: var(--lowdit-tracking-eyebrow, 0.06em);
   text-transform: uppercase;
-  color: var(--lowdit-muted);
+  color: var(--lowdit-color-text-subtle);
 }
 
 .lowdit-quiz-lede {
   margin: 0 0 var(--lowdit-space-5, 1.5rem);
   max-width: 55ch;
-  color: var(--lowdit-muted);
+  color: var(--lowdit-color-text-subtle);
 }
 
 .lowdit-quiz-stats dl {
@@ -35,12 +35,12 @@
   padding: var(--lowdit-space-4, 1rem);
   border: 1px solid var(--lowdit-border-subtle);
   border-radius: var(--lowdit-radius-md, 0.5rem);
-  background: var(--lowdit-surface-raised, var(--lowdit-white));
+  background: var(--lowdit-surface-raised);
 }
 
 .lowdit-quiz-stats dt {
   font-size: var(--lowdit-type-xs, 0.75rem);
-  color: var(--lowdit-muted);
+  color: var(--lowdit-color-text-subtle);
 }
 
 .lowdit-quiz-stats dd {
@@ -51,7 +51,7 @@
 
 .lowdit-quiz-meta {
   font-size: var(--lowdit-type-sm, 0.9375rem);
-  color: var(--lowdit-muted);
+  color: var(--lowdit-color-text-subtle);
 }
 
 .lowdit-quiz-choices {
@@ -67,8 +67,8 @@
   padding: 0.85rem 1rem;
   border: 1px solid var(--lowdit-border-subtle);
   border-radius: var(--lowdit-radius-md, 0.5rem);
-  background: var(--lowdit-white);
-  color: var(--lowdit-ink, var(--lowdit-night));
+  background: var(--lowdit-color-surface);
+  color: var(--lowdit-ink, var(--lowdit-color-text));
   font: inherit;
   line-height: var(--lowdit-line-body, 1.5);
   cursor: pointer;
@@ -77,14 +77,14 @@
 
 .lowdit-quiz-choice:hover,
 .lowdit-quiz-choice:focus-visible {
-  border-color: var(--lowdit-accent-quizago, var(--lowdit-violet));
-  outline: 2px solid var(--lowdit-accent-quizago, var(--lowdit-violet));
+  border-color: var(--lowdit-accent-quizago, var(--lowdit-color-accent));
+  outline: 2px solid var(--lowdit-accent-quizago, var(--lowdit-color-accent));
   outline-offset: 2px;
 }
 
 .lowdit-quiz-choice[aria-pressed="true"] {
-  border-color: var(--lowdit-accent-quizago, var(--lowdit-violet));
-  box-shadow: inset 0 0 0 1px var(--lowdit-accent-quizago, var(--lowdit-violet));
+  border-color: var(--lowdit-accent-quizago, var(--lowdit-color-accent));
+  box-shadow: inset 0 0 0 1px var(--lowdit-accent-quizago, var(--lowdit-color-accent));
 }
 
 .lowdit-quiz-choice.is-correct {
@@ -94,7 +94,7 @@
 
 .lowdit-quiz-choice.is-wrong {
   border-color: var(--lowdit-danger, var(--lowdit-coral));
-  background: color-mix(in srgb, var(--lowdit-danger, var(--lowdit-coral)) 12%, var(--lowdit-white));
+  background: color-mix(in srgb, var(--lowdit-danger, var(--lowdit-coral)) 12%, var(--lowdit-color-surface));
 }
 
 .lowdit-quiz-choice:disabled {
@@ -103,10 +103,10 @@
 }
 
 .lowdit-quiz-result {
-  border-inline-start: 0.25rem solid var(--lowdit-accent-quizago, var(--lowdit-violet));
+  border-inline-start: 0.25rem solid var(--lowdit-accent-quizago, var(--lowdit-color-accent));
   padding: var(--lowdit-space-4, 1rem) var(--lowdit-space-5, 1.5rem);
   margin-block: var(--lowdit-space-4, 1rem);
-  background: color-mix(in srgb, var(--lowdit-accent-quizago, var(--lowdit-violet)) 7%, var(--lowdit-white));
+  background: color-mix(in srgb, var(--lowdit-accent-quizago, var(--lowdit-color-accent)) 7%, var(--lowdit-color-surface));
 }
 
 .lowdit-quiz-question h2,
@@ -127,8 +127,8 @@
   padding: 0.65rem 1.1rem;
   border: none;
   border-radius: var(--lowdit-radius-md, 0.5rem);
-  background: var(--view-accent, var(--lowdit-accent-quizago, var(--lowdit-violet)));
-  color: var(--lowdit-white);
+  background: var(--view-accent, var(--lowdit-accent-quizago, var(--lowdit-color-accent)));
+  color: var(--lowdit-color-surface);
   font: inherit;
   font-weight: 600;
   cursor: pointer;
@@ -141,12 +141,12 @@
 
 .lowdit-quiz-btn--ghost {
   background: transparent;
-  color: var(--lowdit-accent-quizago, var(--lowdit-violet));
-  border: 1px solid var(--lowdit-accent-quizago, var(--lowdit-violet));
+  color: var(--lowdit-accent-quizago, var(--lowdit-color-accent));
+  border: 1px solid var(--lowdit-accent-quizago, var(--lowdit-color-accent));
 }
 
 .lowdit-quiz-external a {
-  color: var(--lowdit-accent-quizago, var(--lowdit-violet));
+  color: var(--lowdit-accent-quizago, var(--lowdit-color-accent));
 }
 
 .lowdit-skip-link {
@@ -154,8 +154,8 @@
   left: -999px;
   top: 0;
   padding: 0.5rem 1rem;
-  background: var(--lowdit-night);
-  color: var(--lowdit-white);
+  background: var(--lowdit-color-text);
+  color: var(--lowdit-color-surface);
   z-index: 2;
 }
 

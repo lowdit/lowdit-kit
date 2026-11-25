@@ -150,8 +150,8 @@ dd + dt {
 blockquote {
   margin: 1.4rem 0;
   padding: 0.3rem 0 0.3rem 1.1rem;
-  border-inline-start: 3px solid var(--lowdit-violet);
-  color: var(--lowdit-muted);
+  border-inline-start: 3px solid var(--lowdit-color-accent);
+  color: var(--lowdit-color-text-subtle);
   max-width: 66ch;
 }
 
@@ -169,7 +169,7 @@ figure {
 figcaption {
   margin-block-start: 0.5rem;
   font-size: var(--lowdit-type-sm);
-  color: var(--lowdit-muted);
+  color: var(--lowdit-color-text-subtle);
 }
 
 /* --- Petit texte, annotations --------------------------------------------- */
@@ -191,7 +191,7 @@ samp {
 
 strong, b { font-weight: 700; }
 mark {
-  background: var(--lowdit-violet-soft, color-mix(in srgb, var(--lowdit-violet) 18%, transparent));
+  background: color-mix(in srgb, var(--lowdit-color-accent) 18%, transparent);
   color: inherit;
 }
 
@@ -205,6 +205,6 @@ abbr[title] {
 .lowdit-lead {
   font-size: var(--lowdit-type-lg);
   line-height: 1.5;
-  color: var(--lowdit-muted);
+  color: var(--lowdit-color-text-subtle);
   max-width: 38em;
 }

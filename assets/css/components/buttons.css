@@ -83,9 +83,9 @@
 /* --- Appui -------------------------------------------------------------- */
 
 .lowdit-btn--primary:active {
-  background: color-mix(in srgb, var(--lowdit-color-action) 88%, var(--lowdit-night));
+  background: color-mix(in srgb, var(--lowdit-color-action) 88%, var(--lowdit-color-text));
   color: var(--lowdit-color-action-foreground);
-  border-color: var(--lowdit-night);
+  border-color: var(--lowdit-color-text);
   box-shadow: none;
 }
 

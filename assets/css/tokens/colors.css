@@ -127,6 +127,15 @@
   --lowdit-color-action-foreground: var(--lowdit-role-action-foreground);
   --lowdit-color-focus: var(--lowdit-role-focus-ring);
   --lowdit-color-border-component: var(--lowdit-role-border-component);
+
+  /* Rôles d'accent (Lowdit). Les feuilles du kit lisent ces rôles, jamais la
+     palette : une autre marque les redéfinit (assets/css/marque.css). */
+  --lowdit-color-text-subtle: var(--lowdit-muted);
+  --lowdit-color-accent: var(--lowdit-violet);
+  --lowdit-color-highlight: var(--lowdit-turquoise);
+  --lowdit-color-brand: var(--lowdit-sage);
+  --lowdit-color-line: var(--lowdit-neutral-300);
+  --lowdit-color-line-strong: var(--lowdit-neutral-600);
 }
 
 :root[data-theme="light"] {
@@ -202,4 +211,18 @@
   --lowdit-accent-frago: var(--lowdit-coral);
   --lowdit-accent-marque: var(--lowdit-turquoise);
   --lowdit-accent-quizago: var(--lowdit-violet);
+}
+
+/* Signature Lowdit (charte premium) : dégradé, accent, surface et ombre des
+   blocs « vitrine ». Venue de charte-premium.css : c'est de la marque. */
+:root {
+  --lowdit-charte-gradient: linear-gradient(
+    165deg,
+    var(--lowdit-turquoise, #14c6b1) 0%,
+    var(--lowdit-violet, #5b3df5) 55%,
+    var(--lowdit-night, #0b2545) 100%
+  );
+  --lowdit-charte-accent: var(--lowdit-violet, #5b3df5);
+  --lowdit-charte-surface: var(--lowdit-color-surface, var(--lowdit-white));
+  --lowdit-charte-shadow: 0 1.25rem 3rem color-mix(in srgb, var(--lowdit-night, #0b2545) 8%, transparent);
 }

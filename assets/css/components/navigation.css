@@ -60,13 +60,13 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  color: var(--lowdit-color-text-muted, var(--lowdit-muted));
+  color: var(--lowdit-color-text-muted);
 }
 
 .lowdit-breadcrumb__item + .lowdit-breadcrumb__item::before {
   content: "/";
   margin-inline-end: 0.5rem;
-  color: var(--lowdit-color-border-component, var(--lowdit-neutral-600));
+  color: var(--lowdit-color-border-component);
 }
 
 .lowdit-breadcrumb a {
@@ -74,7 +74,7 @@
   display: inline-flex;
   align-items: center;
   min-block-size: 24px;
-  color: var(--lowdit-color-link, var(--lowdit-night));
+  color: var(--lowdit-color-link);
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
@@ -115,7 +115,7 @@
   flex-direction: column;
   gap: 0.25rem;
   padding: var(--lowdit-space-3, 0.75rem) var(--lowdit-space-4, 1rem);
-  border: 1px solid var(--lowdit-color-border-component, var(--lowdit-neutral-600));
+  border: 1px solid var(--lowdit-color-border-component);
   border-radius: var(--lowdit-radius-md, 8px);
   color: var(--lowdit-color-text);
   text-decoration: none;
@@ -136,7 +136,7 @@
   font-weight: 700;
   letter-spacing: var(--lowdit-tracking-label, 0.04em);
   text-transform: uppercase;
-  color: var(--lowdit-color-text-muted, var(--lowdit-muted));
+  color: var(--lowdit-color-text-muted);
 }
 
 .lowdit-prev-next__title {
@@ -168,7 +168,7 @@
   padding: 0 0.75rem;
   border: 1px solid var(--lowdit-color-border-component, currentColor);
   border-radius: var(--lowdit-radius-sm, 4px);
-  color: var(--lowdit-color-link, var(--lowdit-night));
+  color: var(--lowdit-color-link);
   text-decoration: none;
 }
 .pagination .page-link:hover {

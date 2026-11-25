@@ -1,9 +1,10 @@
-{{/* Settings (ITCSS) : tokens Lowdit — couleurs, layout, mouvement, élévation.
-     Chargés AVANT la couche overgo (reset, éléments, prose). Ne pas les re-déclarer
-     ailleurs (lowdit-system.css ne les importe plus : évite le double chargement). */}}
-<link rel="stylesheet" href="{{ "assets/css/lowdit-colors.css" | relURL }}">
-<link rel="stylesheet" href="{{ "assets/css/tokens/typography.css" | relURL }}">
-<link rel="stylesheet" href="{{ "assets/css/tokens/layout.css" | relURL }}">
-<link rel="stylesheet" href="{{ "assets/css/tokens/templates.css" | relURL }}">
-<link rel="stylesheet" href="{{ "assets/css/tokens/motion.css" | relURL }}">
-<link rel="stylesheet" href="{{ "assets/css/tokens/elevation.css" | relURL }}">
+{{/* Jetons (settings) : marque par défaut du kit (Lowdit) puis marque du site.
+     Chargés AVANT overgo (reset, éléments, prose). Lus par `resources.Get` :
+     un site ou un module remplace un fichier en fournissant le même chemin
+     (`assets/css/tokens/colors.css`…), ou ne redéfinit que quelques rôles dans
+     `assets/css/marque.css` (absent du kit, chargé en dernier). */}}
+{{- range slice "tokens/colors" "tokens/typography" "tokens/layout" "tokens/templates" "tokens/motion" "tokens/elevation" "marque" }}
+  {{- with resources.Get (printf "css/%s.css" .) }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- end }}
+{{- end }}

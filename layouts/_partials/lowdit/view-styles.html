@@ -3,7 +3,9 @@
      La feuille `css/views/<nom>.css` appartient au module qui sert le modèle
      (repogo, sligo, minigo…) : Hugo la trouve dans le module importé. Sans
      module qui la fournit, aucune feuille n'est liée (pas de lien cassé). */}}
-<link rel="stylesheet" href="{{ "assets/css/lowdit-system.css" | relURL }}">
+{{- with resources.Get "css/lowdit-system.css" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- end }}
 {{- $view := partial "lowdit/resolve-view.html" . -}}
 {{- with $view -}}
   {{- with resources.Get (printf "css/views/%s.css" .) -}}

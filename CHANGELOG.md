@@ -9,6 +9,22 @@ reçoivent les sites qui suivent `main`. Politique :
 
 ### Cassé
 
+- **Les feuilles du kit lisent des rôles, plus la palette** (`--lowdit-night`,
+  `--lowdit-violet`… ne sont plus lus hors `tokens/`). Même rendu pour
+  Lowdit. Les familles de polices (`--lowdit-font-*`) passent
+  d'`overgo/prose.css` à `tokens/typography.css`, et la signature
+  `--lowdit-charte-*` de `charte-premium.css` à `tokens/colors.css`.
+  Où : un site qui redéfinissait `--lowdit-font-*` en comptant sur l'ordre
+  d'`overgo/prose.css`. Migrer : les redéfinir dans `assets/css/marque.css`.
+- **Les jetons sont servis par `resources.Get`** (`/css/tokens/*.css`) et non
+  plus par leur copie publiée `assets/css/lowdit-colors.css` et
+  `assets/css/tokens/*` : un site peut remplacer un fichier de jetons par le
+  même chemin. Les anciens chemins publiés restent (alias), plus liés par le
+  kit.
+- **`components/quiz-drill.css` n'est plus chargé sur toutes les pages** : il
+  l'est par quizago (et les fiches Brand qui le montrent).
+  Où : un site qui affiche `.lowdit-quiz-*` sans quizago.
+  Migrer : `<link>` vers `css/components/quiz-drill.css` dans le bloc `head`.
 - **Les feuilles de vue quittent le kit** et rejoignent le module qui sert le
   modèle, au même chemin (`assets/css/views/<nom>.css`) : `publisher` →
   repogo, `cv-vitrine` → resugo, `deck-studio` → sligo, `drill` → quizago,
@@ -50,6 +66,11 @@ reçoivent les sites qui suivent `main`. Politique :
 
 ### Ajouté
 
+- **Décliner une marque par un seul fichier : `assets/css/marque.css`** du
+  site (absent du kit), chargé juste après les jetons. Rôles nouveaux :
+  `--lowdit-color-text-subtle`, `-accent`, `-highlight`, `-brand`, `-line`,
+  `-line-strong` (valeurs Lowdit inchangées). Voir README « Décliner une
+  marque ».
 - **Un modèle, un mot : `[params.lowdit] model`.** Le module qui sert un
   modèle le déclare dans sa config : `[params.lowdit.models.<nom>]` avec
   `home` (accueil, facultatif) et `sheet` (feuille `css/views/`, facultatif).
